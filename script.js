@@ -58,6 +58,7 @@ function fetchNewsCategoryWise(categoryId)
 
 function displayNews(articles)
 {
+    console.log(articles);
     let newsContainer=document.getElementById("newsContainer");
     newsContainer.innerHTML="";
     if(articles.length===0 )
@@ -98,7 +99,8 @@ function bookmarkAdd(title)
     <button class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded deleteButton">Delete</button>
     `
            bookmarkcontainer.appendChild(div);
-    document.querySelector('.deleteButton').addEventListener('click',()=>
+       let deleteBtn = div.querySelector('.deleteButton');
+       deleteBtn.addEventListener('click',()=>
     {
         div.remove();
         total--;
