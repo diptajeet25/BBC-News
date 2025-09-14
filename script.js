@@ -53,12 +53,22 @@ function fetchNewsCategoryWise(categoryId)
     .then(data=>
     {
         displayNews(data.articles);
-    });
+    })
+    .catch(err=>
+    {
+        let newsContainer=document.getElementById("newsContainer");
+         newsContainer.innerHTML="";
+         newsContainer.innerHTML=`<h2 class="text-3xl font-bold text-center text-red-600">No News Found</h2>`;
+        
+
+
+    }
+    );
 }
 
 function displayNews(articles)
 {
-    console.log(articles);
+    
     let newsContainer=document.getElementById("newsContainer");
     newsContainer.innerHTML="";
     if(articles.length===0 )
