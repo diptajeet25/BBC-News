@@ -86,7 +86,7 @@ function displayNews(articles)
         <h2 class="text-xl font-bold m-2">${articles[i].title}</h2>
         <p class="m-1">${articles[i].time}</p>
 <div class="mt-2 my-2 flex flex-col lg:flex-row gap-2 justify-start items-start">
-  <a class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded" onclick="bookmarkAdd('${x}')">Bookmark</a>
+  <a class="bg-gray-200 hover:bg-gray-300 cursor-pointer  text-black font-bold py-2 px-4 rounded" onclick="bookmarkAdd('${x}')">Bookmark</a>
   <a href="${articles[i].link}" target="_blank" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">View Details</a>
 </div>
 
@@ -106,7 +106,7 @@ function bookmarkAdd(title)
     let div=document.createElement('div');
     div.innerHTML=`<div class="flex rounded-lg flex-col gap-2 justify-start items-start bg-white p-2 my-2">
     <h2 class="text-lg">${title}</h2>
-    <button class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded deleteButton">Delete</button>
+    <button class="bg-gray-200 hover:bg-gray-300 cursor-pointer  text-black font-bold py-2 px-4 rounded deleteButton">Delete</button>
     `
            bookmarkcontainer.appendChild(div);
        let deleteBtn = div.querySelector('.deleteButton');
